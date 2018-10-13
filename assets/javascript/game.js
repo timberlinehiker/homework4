@@ -4,7 +4,7 @@
 var randomNumber = 0;
 //track number of losses
 var losses = 0;
-//track number of losses
+//track number of wins
 var wins = 0;
 //generate a random number for each crystal
 var random = 0;
@@ -42,27 +42,45 @@ function startRound() {
     //INSTEAD, PUSH VALUES TO THE BUTTONS BUT DO NOT SHOW ON THE PAGE
     for (var j = 0; j < crystals.length; j++) {
         var crystalValue = "#c" + j;
-        $(crystalValue).val=(crystals[j]);
+        $(crystalValue).text(crystals[j]);
         // document.getElementById("c" + j).innerHTML = crystals[j];
     }
     total = 0;
+    $("#guessed").text(total);
+    
 
 
 }
 
 //function buttonClick() {
     $("button").click(function() {
-        var buttonValue = $(this).val();
+        var buttonValue = $(this).text();
         console.log(buttonValue);
-        console.log(this);
-        total = total + buttonValue;
+        //console.log(val.this);
+        total = total + parseInt(buttonValue);
         console.log(total);
+        $("#guessed").text(total);
+        if (total === randomNumber) {
+            wins++;
+            alert("You win!");
+            $("#wins").text(wins)
+            startRound();
+        }
+        if (total > randomNumber) {
+            losses++;
+            alert("You loose!");
+            $("#losses").text(losses);
+            startRound();
+        }
     });
-
+function win() {
+    
+}
 
 // EXECUTE FUNCTIONS
 
 startRound();
+
     // var crystal = $("<div>");
     // crystal.addClass("crystal");
     // crystal.attr({  add class function

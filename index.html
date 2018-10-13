@@ -8,17 +8,31 @@
 </head>
 <body>
     <div>
+        <h1>Click crystals so that the total equals: </h1>
         <h1 class="target"></h1>
     </div>
     
 
     
     <div class="crystals">
-        <button class="crystal" id="c0"></button>
-        <button class="crystal" id="c1"></button>
-        <button class="crystal" id="c2"></button>
-        <button class="crystal" id="c3"></button>
+        <button class="crystal" id="c0" img src="assets/images/Crystal 1"></button>
+        <button class="crystal" id="c1" img src="assets/images/Crystal 2"></button>
+        <button class="crystal" id="c2" img src="assets/images/Crystal 3"></button>
+        <button class="crystal" id="c3" img src="assets/images/Crystal 4"></button>
     </div>
+    <div>
+        <h1>Total Guessed: </h1>
+        <h1 id = "guessed"></h1>
+    </div>
+    <div>
+        <h1>Wins: </h1>
+        <h1 id="wins"></h1>
+    </div>
+    <div>
+            <h1>Losses: </h1>
+            <h1 id="losses"></h1>
+        </div>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
